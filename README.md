@@ -1,2 +1,2 @@
 # wastelandtickets
-Wasteland.gg Ticketing System
+Wasteland Ticketing System - https://discord.gg/bxMUHJFnbd
