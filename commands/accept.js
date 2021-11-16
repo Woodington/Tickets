@@ -16,7 +16,7 @@ module.exports = {
 
         const acceptEmbed = new MessageEmbed() //Sets up the embed
         .setColor(config.acceptColor) //Sets Embed Color
-        .setDescription(`Ticket Accepted By: **${message.author.tag}**`) //Embed text
+        .setDescription(`Ticket Accepted By: <@${message.author.id}>`) //Embed text
 
         user.send({ embeds: [acceptEmbed] }) //Sends the DM
         }
