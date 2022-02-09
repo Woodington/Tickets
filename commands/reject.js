@@ -3,7 +3,7 @@ const fs = require('fs');
 const config = require('../config/config.json')
 
 module.exports = {
-    name: 'reject', //sets command name
+    name: 'reject', 
     /**
      * @param {Client} client 
      * @param {Message} message 
@@ -12,16 +12,16 @@ module.exports = {
 
     run: async(client, message, args) => {  
 
-        if(!message.member.permissions.has('MANAGE_MESSAGES')) return; //Checks if user has delete messages permission 
+        if(!message.member.permissions.has('MANAGE_MESSAGES')) return; 
 
-        const user = message.mentions.users.first() || message.guild.members.cache.get(args[0])?.user //Sets the user to the first metioned person
+        const user = message.mentions.users.first() || message.guild.members.cache.get(args[0])?.user 
 
-        const str = args.slice(1).join(' ') //Removes the user ID from the DM 
+        const str = args.slice(1).join(' ')
 
-        const rejectEmbed = new MessageEmbed() //Sets up the embed
-        .setColor(config.rejectColor)   //Sets embed color
-        .setDescription(`Ticket Rejected\n**Reason:** ${str}`) //sets embed message
+        const rejectEmbed = new MessageEmbed() 
+        .setColor(config.rejectColor)   
+        .setDescription(`Ticket Rejected\n**Reason:** ${str}`)
 
-        user.send({ embeds: [rejectEmbed] }) //Sends the DM
+        user.send({ embeds: [rejectEmbed] }) 
         }
     };
